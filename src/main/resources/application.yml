@@ -1,0 +1,20 @@
+server:
+  port: 8081
+
+spring:
+  application:
+    name: github-access-report
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info
+
+github:
+  api-base-url: https://api.github.com
+  token: ${GITHUB_TOKEN}
+  page-size: 100
+  collaborator-concurrency: 10
+  request-timeout-seconds: 30
+  enable-cache: true
