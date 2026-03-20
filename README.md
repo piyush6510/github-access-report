@@ -1,39 +1,39 @@
-🚀 GitHub Access Report Service
+# 🚀 GitHub Access Report Service
 
-A Spring Boot backend service that connects to GitHub and generates an aggregated access report showing which users have access to which repositories in a given organization.
+A Spring Boot backend service that connects to GitHub and generates an **aggregated access report** showing which users have access to which repositories in a given organization.
 
-📌 Features
+---
 
-🔐 Authenticate with GitHub using a Personal Access Token
+## 📌 Features
 
-📦 Fetch all repositories of an organization
+- 🔐 Authenticate with GitHub using a Personal Access Token  
+- 📦 Fetch all repositories of an organization  
+- 👥 Fetch collaborators for each repository  
+- 🔄 Aggregate data into **user → repositories mapping**  
+- ⚡ Concurrent API calls for better performance  
+- 🌐 Expose the report via REST API  
+- ❗ Proper error handling (401, 403, 404)  
 
-👥 Fetch collaborators for each repository
+---
 
-🔄 Aggregate data into user → repositories mapping
+## 🛠️ Tech Stack
 
-⚡ Concurrent API calls for better performance
+- Java 17  
+- Spring Boot 3  
+- Spring Web + WebFlux (WebClient)  
+- Maven  
+- Caffeine Cache  
 
-🌐 Expose the report via REST API
+---
 
-❗ Proper error handling (401, 403, 404)
+## 🔗 API Endpoint
 
-🛠️ Tech Stack
-
-Java 17
-
-Spring Boot 3
-
-Spring Web + WebFlux (WebClient)
-
-Maven
-
-Caffeine Cache
-
-🔗 API Endpoint
+```http
 GET /api/v1/orgs/{organization}/access-report
-Example
+
+## Example
 curl http://localhost:8080/api/v1/orgs/my-org/access-report
+
 📊 Sample Response
 {
   "organization": "my-org",
@@ -65,6 +65,7 @@ curl http://localhost:8080/api/v1/orgs/my-org/access-report
     }
   ]
 }
+
 🔑 Authentication
 
 Set GitHub token before running:
@@ -80,7 +81,6 @@ Repository metadata: read
 Organization members: read (if required)
 
 For classic tokens: repo, read:org
-
 ▶️ How to Run
 1. Clone the project
 git clone https://github.com/piyush6510/github-access-report.git
